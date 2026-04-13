@@ -1,10 +1,11 @@
 #include <iostream>
 
+void LogMessage(const char* message);
 
 int main()
 {
 	std::cout << "Hello, World!" << std::endl;
-	std::cout << "This is a simple C++ program." << std::endl;
+	LogMessage("This is a simple C++ program.");
 	std::cin.get(); 
 	return 0;
 }
