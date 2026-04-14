@@ -11,6 +11,23 @@ int main()
 	LogMessage("This is a simple C++ program.");
 	int a = 5;
 	int b = 10;
-	std::cout << Multiply(a, b) << std::endl;
+	bool isGreater = a < b;
+	int result = 0;
+	if (isGreater)
+	{
+		result = Multiply(a, b);
+	}
+
+	std::cout << result << std::endl;
+
+	LogMessage("Enter number of elements: ");
+	int n;
+	std::cin >> n;
+
+	for (size_t i = 1; i <= n; i++)
+	{
+		std::cout << i << std::endl;
+	}
+
 	std::cin.get(); 
 }
