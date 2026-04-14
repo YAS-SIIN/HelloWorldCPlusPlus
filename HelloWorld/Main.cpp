@@ -5,8 +5,12 @@ int Multiply(int a, int b);
 
 int main()
 {
+	char test = 't';
 	std::cout << "Hello, World!" << std::endl;
+	std::cout << test << std::endl;
 	LogMessage("This is a simple C++ program.");
-	std::cout << Multiply(3, 4) << std::endl;
+	int a = 5;
+	int b = 10;
+	std::cout << Multiply(a, b) << std::endl;
 	std::cin.get(); 
 }
