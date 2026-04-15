@@ -1,13 +1,17 @@
 #include <iostream>
 #include "Logger.h"
+#include "Player.cpp"
+
+using namespace std;
 
 int Multiply(int a, int b);
+
 
 int main()
 {
 	char test = 't';
-	std::cout << "Hello, World!" << std::endl;
-	std::cout << test << std::endl;
+	cout << "Hello, World!" << endl;
+	cout << test << endl;
 	LogMessage("This is a simple C++ program.");
 	int a = 5;
 	int b = 10;
@@ -18,23 +22,23 @@ int main()
 		result = Multiply(a, b);
 	}
 
-	std::cout << result << std::endl;
+	cout << result << endl;
 
 	LogMessage("Enter number of elements greater than 0: ");
 	int n;
-	std::cin >> n;
+	cin >> n;
 
 	LogMessage("Printing with for loop");
 	for (size_t i = 1; i <= n; i++)
 	{
-		std::cout << i << std::endl;
+		cout << i << endl;
 	}
 
 	LogMessage("Printing with while loop");
 	size_t i = 1;
 	while (i <= n)
 	{
-		std::cout << i << std::endl;
+		cout << i << endl;
 		i++;
 	}
 
@@ -42,7 +46,7 @@ int main()
 	i = 1;
 	do
 	{
-		std::cout << i << std::endl;
+		cout << i << endl;
 		i++;
 	} while (i <= n);
 
@@ -50,11 +54,15 @@ int main()
 	void* ptr = nullptr;
 	int* intPtr = &n;
 	void* anotherPtr = &n;
+	int** ptrToAnotherPtr = &intPtr;
 
 	// access to pointer data
 	*intPtr = 10;
-	std::cout << "Value of n through pointer: " << n << std::endl;
+	cout << "Value of n through pointer: " << n << endl;
 
+	int& refToN = n;
+	refToN = 20;
+	cout << "Value of n through reference: " << n << endl;
 
 	char* buffer = new char[8];
 	memset(buffer, 0, 8);
@@ -63,6 +71,14 @@ int main()
 
 	delete[] buffer;
 
+
+	// Use class
+	Player player;
+	player.x = 10;
+	player.y = 20;
+	player.speed = 5;
+	player.MovePlayer(2, 1);
+
 	LogMessage("Press Enter to exit..."); 
-	std::cin.get();  
+	cin.get();  
 }
