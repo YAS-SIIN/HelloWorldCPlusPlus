@@ -1,14 +1,25 @@
-class Player
+#include "Entity.cpp"
+
+class Player : public Entity
 {
 public:
 	int x, y;
 	int speed;
+
+	Player(const std::string& name) : m_Name(name) {
+
+	}
 
 	void MovePlayer(int deltaX, int deltaY)
 	{
 		x += deltaX * speed;
 		y += deltaY;
 	}
-private:
 
+	std::string GetName() override {
+		return m_Name;
+	}
+
+private:
+	std::string m_Name;
 };

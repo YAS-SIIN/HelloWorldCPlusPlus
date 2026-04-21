@@ -71,14 +71,35 @@ int main()
 
 	delete[] buffer;
 
+	// Work with const variables and pointers
+	int aaa = 10;
+	const int* p = &n;
+	p = &aaa;
+
+	int bbb = 10;
+	int* const q = &bbb;
+	*q = 20;
+
+	int ccc = 10;
+	const int* const r = &ccc;
 
 	// Use class
-	Player player;
+	Player player("Player1");
 	player.x = 10;
 	player.y = 20;
 	player.speed = 5;
 	player.MovePlayer(2, 1);
+	cout << "Player name: " << player.GetName() << endl;
+	 
 
-	LogMessage("Press Enter to exit..."); 
-	cin.get();  
+	LogMessage("Press Enter to exit...");
+	cin.get();
 }
+
+struct MyStruct
+{
+
+	std::string GetName() {
+		return "m_Name";
+	}
+};
