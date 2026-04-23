@@ -85,6 +85,7 @@ int main()
 
 	// Use class
 	Player player("Player1");
+	player.id = 1;
 	player.x = 10;
 	player.y = 20;
 	player.speed = 5;

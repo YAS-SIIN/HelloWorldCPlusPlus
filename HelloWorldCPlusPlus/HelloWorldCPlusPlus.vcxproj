@@ -140,6 +140,7 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Math.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\SubEntity.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\EndBrace.h" />

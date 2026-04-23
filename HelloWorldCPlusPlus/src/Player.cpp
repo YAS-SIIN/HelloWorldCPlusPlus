@@ -6,7 +6,7 @@ public:
 	int x, y;
 	int speed;
 
-	Player(const std::string& name) : m_Name(name) {
+	Player(const std::string& name) : m_Name(name), Entity(0, const_cast<std::string&>(name), 0, 0) {
 
 	}
 
