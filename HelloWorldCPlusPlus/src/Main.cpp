@@ -84,7 +84,7 @@ int main()
 	const int* const r = &ccc;
 
 	// Use class
-	Player player("Player1");
+	Player player = Player("Player1");
 	player.id = 1;
 	player.x = 10;
 	player.y = 20;
@@ -93,7 +93,17 @@ int main()
 	cout << "Player name: " << player.GetName() << endl;
 	 
 
-	LogMessage("Press Enter to exit...");
+	Player* playerPtr = new Player("Player2");
+	playerPtr->id = 2;
+	playerPtr->x = 15;
+	playerPtr->y = 25;
+	playerPtr->speed = 3;
+	playerPtr->MovePlayer(1, 2);
+	cout << "Player name: " << playerPtr->GetName() << endl;
+
+	delete playerPtr;
+
+ 	LogMessage("Press Enter to exit...");
 	cin.get();
 }
 
