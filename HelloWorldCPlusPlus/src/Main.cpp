@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Logger.h"
 #include "Player.cpp"
+#include "VectorTest.cpp"
 
 using namespace std;
 
@@ -9,6 +10,8 @@ int Multiply(int a, int b);
 
 int main()
 {
+
+#pragma region Basics in C++
 	char test = 't';
 	cout << "Hello, World!" << endl;
 	cout << test << endl;
@@ -27,6 +30,10 @@ int main()
 	LogMessage("Enter number of elements greater than 0: ");
 	int n;
 	cin >> n;
+#pragma endregion
+
+
+#pragma region Loops
 
 	LogMessage("Printing with for loop");
 	for (size_t i = 1; i <= n; i++)
@@ -49,6 +56,10 @@ int main()
 		cout << i << endl;
 		i++;
 	} while (i <= n);
+#pragma endregion
+
+
+#pragma region Work with pointers
 
 	double aa = (double)n;
 	void* ptr = nullptr;
@@ -56,7 +67,6 @@ int main()
 	void* anotherPtr = &n;
 	int** ptrToAnotherPtr = &intPtr;
 
-	// access to pointer data
 	*intPtr = 10;
 	cout << "Value of n through pointer: " << n << endl;
 
@@ -71,7 +81,10 @@ int main()
 
 	delete[] buffer;
 
-	// Work with const variables and pointers
+#pragma endregion
+
+ 
+#pragma region Work with const variables and pointers
 	int aaa = 10;
 	const int* p = &n;
 	p = &aaa;
@@ -82,8 +95,11 @@ int main()
 
 	int ccc = 10;
 	const int* const r = &ccc;
+#pragma endregion
 
-	// Use class
+
+#pragma region Work with structures and classes
+
 	Player player = Player("Player1");
 	player.id = 1;
 	player.x = 10;
@@ -91,7 +107,7 @@ int main()
 	player.speed = 5;
 	player.MovePlayer(2, 1);
 	cout << "Player name: " << player.GetName() << endl;
-	 
+
 
 	Player* playerPtr = new Player("Player2");
 	playerPtr->id = 2;
@@ -103,14 +119,25 @@ int main()
 
 	delete playerPtr;
 
+#pragma endregion
+
+	 
+#pragma region Work with operator overloading
+
+	VectorTest position(1.0f, 2.0f);
+	VectorTest speed(0.5f, 0.5f);
+	VectorTest powerUp(2.0f, 2.0f);
+
+	VectorTest newPosition1 = position.Add(speed.Multiply(powerUp));
+	VectorTest newPosition2 = position + speed * powerUp;
+
+	bool comparisonResult = newPosition1 == newPosition2;
+
+#pragma endregion
+
+
+
  	LogMessage("Press Enter to exit...");
 	cin.get();
 }
 
-struct MyStruct
-{
-
-	std::string GetName() {
-		return "m_Name";
-	}
-};

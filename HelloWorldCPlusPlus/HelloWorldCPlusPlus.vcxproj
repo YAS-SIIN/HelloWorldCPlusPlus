@@ -141,6 +141,7 @@
     <ClCompile Include="src\Math.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\SubEntity.cpp" />
+    <ClCompile Include="src\VectorTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\EndBrace.h" />
